@@ -47,7 +47,7 @@ namespace Oliver_ACT2019_Product.Web
             }
 
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
 
             app.UseMvc();
         }
