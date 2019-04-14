@@ -56,5 +56,17 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Region.sql" />
+    <Build Include="Tables\State.sql" />
+    <Build Include="Tables\Park.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_publish_Oliver-ACT2019-Product.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Oliver-ACT2019-Product.Database.refactorlog" />
   </ItemGroup>
 </Project>

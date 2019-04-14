@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Oliver_ACT2019_Product.Web.Models;
 
 namespace Oliver_ACT2019_Product.Web
 {
@@ -29,6 +31,8 @@ namespace Oliver_ACT2019_Product.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddDbContext<NPPDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:OliverActDb"]));
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
