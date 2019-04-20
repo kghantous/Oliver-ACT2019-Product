@@ -22,6 +22,8 @@ namespace Oliver_ACT2019_Product.Web.Pages.Parks
         [BindProperty]
         public Park Park { get; set; }
 
+        public SelectList StateLookup { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -35,6 +37,10 @@ namespace Oliver_ACT2019_Product.Web.Pages.Parks
             {
                 return NotFound();
             }
+
+            //Get States
+            StateLookup = new SelectList(await _context.States.OrderBy(x => x.Name).ToListAsync(), nameof(State.Id), nameof(State.Name));
+
             return Page();
         }
 

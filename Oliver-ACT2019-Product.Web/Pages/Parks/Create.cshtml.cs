@@ -19,19 +19,18 @@ namespace Oliver_ACT2019_Product.Web.Pages.Parks
             _context = context;
         }
 
-        public async Task<IActionResult> OnGet()
-        {
-            //Get States
-            StateLookup = new SelectList(await _context.States.OrderBy(x => x.Name).ToListAsync(), null, nameof(State.Id), nameof(State.Name));
-
-            return Page();
-        }
-
         [BindProperty]
         public Park Park { get; set; }
 
-        [BindProperty]
         public SelectList StateLookup { get; set; }
+
+        public async Task<IActionResult> OnGet()
+        {
+            //Get States
+            StateLookup = new SelectList(await _context.States.OrderBy(x => x.Name).ToListAsync(), nameof(State.Id), nameof(State.Name));
+
+            return Page();
+        }
 
         public async Task<IActionResult> OnPostAsync()
         {

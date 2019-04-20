@@ -19,10 +19,12 @@ namespace Oliver_ACT2019_Product.Web.Pages.Parks
         }
 
         public IList<Park> Park { get;set; }
+        public Dictionary<int,string> StateLookup { get; set; }
 
         public async Task OnGetAsync()
         {
             Park = await _context.Parks.ToListAsync();
+            StateLookup = await _context.States.ToDictionaryAsync(x => x.Id, x => x.Name);
         }
     }
 }
