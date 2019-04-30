@@ -12,6 +12,7 @@ namespace Oliver_ACT2019_Product.Web.Models
     {
         [Key]
         public int Id { get; set; }
+        [Column(TypeName ="Varchar(50)")]
         public string Name { get; set; }
         public int State_Id { get; set; }
     }

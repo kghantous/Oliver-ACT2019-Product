@@ -62,6 +62,7 @@
     <Build Include="Tables\Region.sql" />
     <Build Include="Tables\State.sql" />
     <Build Include="Tables\Park.sql" />
+    <Build Include="Tables\Facts.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="_publish_Oliver-ACT2019-Product.Database.publish.xml" />

@@ -1,0 +1,28 @@
+﻿@page
+@model Oliver_ACT2019_Product.Web.Pages.Parks.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+<form method="post">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search a Park" name="Query" />
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+
+@if (this.Model.Results?.Any() == true)
+{
+    <div class="list-group">
+        @foreach (var item in Model.Results)
+        {
+            <div class="list-group-item">
+                <a asp-action="Details" asp-route-id="item.Id">@item.Name</a>
+            </div>
+        }
+    </div>
+}
