@@ -1,22 +1,44 @@
 ﻿@page
-@model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
+<style>
+    .list-group-item h2 {
+        margin: 0px;
+        padding: 0px;
+        margin-right: 10px;
+    }
+</style>
+
 <div class="text-center">
-    <h1 class="display-4">Your health in National Parks can be hindered by pollution, but you can reduce air pollution by making simple changes.</h1>
-    <p>Learn about national park and how your health can be damiged by pollution.</p>
+    <h2 class="display-4">Your health in National Parks can be hindered by pollution, but you can reduce air pollution by making simple changes.</h2>
+    <p>Learn about national park and how your health can be damiged by pollution  and what you can do to help it.</p>
+    <div class="text-left">
+        <div class="row">
+            <div class="col">
+                <div class="list-group">
+                    <a asp-page="History" class="list-group-item"><h2 class="fas fa-history"></h2>History</a>
+                    <a asp-page="TypesOfHealth" class="list-group-item"><h2 class="fas fa-heartbeat"></h2>Types of Health</a>
+                    <a asp-page="RelatedProblems" class="list-group-item"><h2 class="fas fa-exclamation-triangle"></h2>Related Problems</a>
+                    <a asp-page="ProsConsPerspective" class="list-group-item"><h2 class="fas fa-balance-scale"></h2> Pros & Cons/Perspective</a>
 
-    <div class="col-6">
-        <div class="card">
-            <a asp-page="Category" class="card-header">Park Info.</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="list-group">
+                    <a asp-page="ParkInfo" class="list-group-item"><h2 class="fas fa-info-circle"></h2>Park Info</a>
+                    <a asp-page="HealthBenefits" class="list-group-item"><h2 class="far fa-thumbs-up"></h2>Health Benifits</a>
+                    <a asp-page="ProblemsSolutionsWarnings" class="list-group-item"><h2 class="fas fa-radiation"></h2><h2 class="far fa-thumbs-up"></h2>Problems, Solutions, Warnings</a>
+                    <a asp-page="TakeAction" class="list-group-item"><h2 class="fas fa-directions"></h2>Take Action</a>
 
-            <a asp-page="Pros & Cons" class="card-header">Pros & Cons </a>
-
-            <a asp-page="Solution/Take Action" class="card-header">Take Action</a>
-
-            <a asp-page="Problems Related" class="card-header">Problems Related</a>
-
-</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a asp-page="Bibliogrphy" class="list-group-item text-center"><h2 class="fas fa-book"></h2>Bibliography</a>
+            </div>
+        </div>
+    </div>
 </div>

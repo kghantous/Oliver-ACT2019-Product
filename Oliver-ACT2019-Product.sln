@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oliver-ACT2019-Product.Web", "Oliver-ACT2019-Product.Web\Oliver-ACT2019-Product.Web.csproj", "{ECB45331-4728-4B83-AD82-ABF4B09B64AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oliver-ACT2019-Product.Web", "Oliver-ACT2019-Product.Web\Oliver-ACT2019-Product.Web.csproj", "{ECB45331-4728-4B83-AD82-ABF4B09B64AE}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Oliver-ACT2019-Product.Database", "Oliver-ACT2019-Product.Database\Oliver-ACT2019-Product.Database.sqlproj", "{BA0D067C-E9BE-4A3C-99FC-E03A81178790}"
 EndProject
