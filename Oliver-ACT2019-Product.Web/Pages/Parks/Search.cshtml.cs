@@ -11,19 +11,26 @@ namespace Oliver_ACT2019_Product.Web.Pages.Parks
 {
     public class SearchModel : PageModel
     {
-        [BindProperty]
+        [BindProperty(SupportsGet =true)]
         public string Query { get; set; }
 
         public IEnumerable<Park> Results { get; set; } 
 
-        public void OnGet()
+        public async Task OnGetAsync([FromServices] NPPDbContext context)
         {
+            if(string.IsNullOrWhiteSpace(Query))
+            {
+                await Task.CompletedTask;
+            }
+
             //Load the search Page!
+            Results = await context.Parks
+                .Where(row => row.Name.StartsWith(Query))
+                .OrderBy(x=>x.Name)
+                .ToListAsync();
+
         }
 
-        public async Task OnPost([FromServices] NPPDbContext context)
-        {
-            Results = await context.Parks.Where(row => row.Name.StartsWith(Query)).ToListAsync();
-        }
+       
     }
 }

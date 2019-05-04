@@ -6,9 +6,9 @@
 
 <h1>Search</h1>
 
-<form method="post">
+<form method="get">
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search a Park" name="Query" />
+        <input type="text" class="form-control" placeholder="Search a Park" name="Query" value="@Request.Query["Query"]" />
         <div class="input-group-append">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
