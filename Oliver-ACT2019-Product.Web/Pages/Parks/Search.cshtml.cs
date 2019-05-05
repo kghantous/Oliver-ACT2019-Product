@@ -25,6 +25,7 @@ namespace Oliver_ACT2019_Product.Web.Pages.Parks
 
             //Load the search Page!
             Results = await context.Parks
+                .Include(x=>x.State)
                 .Where(row => row.Name.StartsWith(Query))
                 .OrderBy(x=>x.Name)
                 .ToListAsync();

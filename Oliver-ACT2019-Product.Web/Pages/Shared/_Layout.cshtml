@@ -35,7 +35,7 @@
                         <li class="nav-item">
                             <form class="form-inline" asp-page="Parks/Search" method="get">
                                 <div class="input-group">
-                                    <input class="form-control" type="search" name="query" placeholder="Search" value="@Context.Request.Query["Query"]" />
+                                    <input class="form-control" type="search" name="query" placeholder="Search for a park" value="@Context.Request.Query["Query"]" />
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i> Search</button>
                                     </div>
@@ -56,7 +56,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - Oliver Ghantous - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2019 - Oliver Ghantous - <a asp-area="" asp-page="/Privacy">Privacy</a> | Source available on <a href="https://github.com/kghantous/Oliver-ACT2019-Product" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         </div>
     </footer>
 
