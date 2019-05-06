@@ -15,5 +15,8 @@ namespace Oliver_ACT2019_Product.Web.Models
         [Column(TypeName ="Varchar(50)")]
         public string Name { get; set; }
         public int State_Id { get; set; }
+
+        [ForeignKey(nameof(State_Id))]
+        public State State { get; set; }
     }
 }

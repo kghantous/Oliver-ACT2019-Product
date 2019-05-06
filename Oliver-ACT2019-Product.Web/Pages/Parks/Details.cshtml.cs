@@ -27,7 +27,10 @@ namespace Oliver_ACT2019_Product.Web.Pages.Parks
                 return NotFound();
             }
 
-            Park = await _context.Parks.FirstOrDefaultAsync(m => m.Id == id);
+            Park = await _context.Parks
+                .Include(x=>x.State)
+                .ThenInclude(x=>x.Region)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (Park == null)
             {

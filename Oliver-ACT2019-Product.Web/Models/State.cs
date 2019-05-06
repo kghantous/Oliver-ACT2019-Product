@@ -14,5 +14,8 @@ namespace Oliver_ACT2019_Product.Web.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Region_Id { get; set; }
+
+        [ForeignKey(nameof(Region_Id))]
+        public Region Region { get; set; }
     }
 }

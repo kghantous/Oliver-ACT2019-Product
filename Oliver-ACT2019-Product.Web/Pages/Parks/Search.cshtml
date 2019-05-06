@@ -21,7 +21,7 @@
         @foreach (var item in Model.Results)
         {
             <div class="list-group-item">
-                <a asp-action="Details" asp-route-id="item.Id">@item.Name</a>
+                <a asp-page="./Details" asp-route-id="@item.Id">@item.Name - @item.State.Name</a>
             </div>
         }
     </div>
